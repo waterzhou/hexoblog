@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://waterzhou.github.io">
-  <title>Archives: 2017 | 正恳电子创作空间</title>
+  <title>正恳ESP32模块开发笔记之Hello World篇 | 正恳电子创作空间</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="小创意，大创作">
-<meta property="og:type" content="website">
-<meta property="og:title" content="正恳电子创作空间">
-<meta property="og:url" content="https://waterzhou.github.io/archives/2017/index.html">
+  <meta name="description" content="隽恳电子的正恳ESP32模块，相对于目前市场上类似的模块来说，似乎没有什么两样，因为几乎所有的ESP32模块都是参考乐鑫官方提供的参考设计来实现的。各家主要的特色就体现在器件用料和软件支持上。 在硬件设计上，正恳ESP32模块具有以下特点：  USB转串口芯片采用Silicon Labs的CP2102，支持windows7/8/10/Visa/XP 可以通过两端的PIN脚直接在面包板上调试程序">
+<meta name="keywords" content="无线模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正恳ESP32模块开发笔记之Hello World篇">
+<meta property="og:url" content="https://waterzhou.github.io/2017/06/09/ESP32development/index.html">
 <meta property="og:site_name" content="正恳电子创作空间">
-<meta property="og:description" content="小创意，大创作">
+<meta property="og:description" content="隽恳电子的正恳ESP32模块，相对于目前市场上类似的模块来说，似乎没有什么两样，因为几乎所有的ESP32模块都是参考乐鑫官方提供的参考设计来实现的。各家主要的特色就体现在器件用料和软件支持上。 在硬件设计上，正恳ESP32模块具有以下特点：  USB转串口芯片采用Silicon Labs的CP2102，支持windows7/8/10/Visa/XP 可以通过两端的PIN脚直接在面包板上调试程序">
+<meta property="og:image" content="https://waterzhou.github.io/2017/06/09/ESP32development/ESP32pinout.jpg">
+<meta property="og:image" content="https://waterzhou.github.io/2017/06/09/ESP32development/FeaturesESP32.JPG">
+<meta property="og:image" content="https://waterzhou.github.io/2017/06/09/ESP32development/project-configuration.png">
+<meta property="og:updated_time" content="2017-06-09T09:12:07.098Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正恳电子创作空间">
-<meta name="twitter:description" content="小创意，大创作">
+<meta name="twitter:title" content="正恳ESP32模块开发笔记之Hello World篇">
+<meta name="twitter:description" content="隽恳电子的正恳ESP32模块，相对于目前市场上类似的模块来说，似乎没有什么两样，因为几乎所有的ESP32模块都是参考乐鑫官方提供的参考设计来实现的。各家主要的特色就体现在器件用料和软件支持上。 在硬件设计上，正恳ESP32模块具有以下特点：  USB转串口芯片采用Silicon Labs的CP2102，支持windows7/8/10/Visa/XP 可以通过两端的PIN脚直接在面包板上调试程序">
+<meta name="twitter:image" content="https://waterzhou.github.io/2017/06/09/ESP32development/ESP32pinout.jpg">
   
     <link rel="alternative" href="/atom.xml" title="正恳电子创作空间" type="application/atom+xml">
   
@@ -152,36 +158,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ESP32development" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/06/09/ESP32development/" class="archive-article-date">
-  	<time datetime="2017-06-09T09:12:07.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/06/09/ESP32development/">正恳ESP32模块开发笔记之Hello World篇</a>
+    <h1 class="article-title" itemprop="name">
+      正恳ESP32模块开发笔记之Hello World篇
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/06/09/ESP32development/" class="archive-article-date">
+  	<time datetime="2017-06-09T09:12:07.138Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>隽恳电子的正恳ESP32模块，相对于目前市场上类似的模块来说，似乎没有什么两样，因为几乎所有的ESP32模块都是参考乐鑫官方提供的参考设计来实现的。各家主要的特色就体现在器件用料和软件支持上。</p>
+<p>在硬件设计上，正恳ESP32模块具有以下特点：</p>
+<ol>
+<li>USB转串口芯片采用Silicon Labs的CP2102，支持windows7/8/10/Visa/XP</li>
+<li>可以通过两端的PIN脚直接在面包板上调试程序</li>
+<li>板载乐鑫官方的ESP-WROOM-32模块</li>
+<li>支持自动下载，无需人工干预</li>
+<li>按键采用进口C&amp;K 轻触微型开关</li>
+<li>带锂电池充电电路，客户可以在调试完板子之后直接用锂电池供电使用，瞬间开发板变产品</li>
+<li>锂电池充电芯片为美国Microchip的MCP73831</li>
+</ol>
+<p>正恳ESP32 PINOUT图：<br><img src="/2017/06/09/ESP32development/ESP32pinout.jpg" alt="logo"></p>
+<p>ESP32 特性：<br><img src="/2017/06/09/ESP32development/FeaturesESP32.JPG" alt="logo"></p>
+<ul>
+<li>Xtensa® Dual-Core 32-bit LX6 microprocessors</li>
+<li>CPU频率160MHz~240MHz</li>
+<li>运行freeRTOS系统</li>
+<li>1Kbit EFUSE</li>
+<li>内置4MB W25Q32 NorFlash</li>
+<li>520KB 内部SRAM（Data &amp; Instruction）</li>
+<li>448KB 内部ROM</li>
+<li>802.11 b/g/n/e/i WLAN STA/AP/P2P模式</li>
+<li>Bluetooth 4.2（Classic BT &amp; BLE）</li>
+</ul>
+<h1 id="开启Hello-world之旅"><a href="#开启Hello-world之旅" class="headerlink" title="开启Hello world之旅"></a>开启Hello world之旅</h1><h2 id="ESP32-PC开发环境的搭建"><a href="#ESP32-PC开发环境的搭建" class="headerlink" title="ESP32 PC开发环境的搭建"></a>ESP32 PC开发环境的搭建</h2><p>ESP32支持Windows，Ubuntu，MacOS环境下开发，编译环境的搭建主要是toolchain交叉编译环境的安装，<br>可以参考下面的链接：<br><a href="http://esp-idf.readthedocs.io/en/latest/get-started/index.html#get-started-customized-setup" target="_blank" rel="external">http://esp-idf.readthedocs.io/en/latest/get-started/index.html#get-started-customized-setup</a></p>
+<h2 id="获取ESP-IDF源码"><a href="#获取ESP-IDF源码" class="headerlink" title="获取ESP-IDF源码"></a>获取ESP-IDF源码</h2><p>搭建好编译环境之后，就可以在Terminal下通过下面的命令获取ESP32的源码,以ubuntu开发环境为例，其他环境类似：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/esp</div><div class="line">git clone --recursive https://github.com/espressif/esp-idf.git</div></pre></td></tr></table></figure>
+<h2 id="设置ESP-IDF的toolchain路径"><a href="#设置ESP-IDF的toolchain路径" class="headerlink" title="设置ESP-IDF的toolchain路径"></a>设置ESP-IDF的toolchain路径</h2><p>参考下面的链接：<br><a href="http://esp-idf.readthedocs.io/en/latest/get-started/add-idf_path-to-profile.html" target="_blank" rel="external">http://esp-idf.readthedocs.io/en/latest/get-started/add-idf_path-to-profile.html</a></p>
+<h2 id="创建Hello-world工程"><a href="#创建Hello-world工程" class="headerlink" title="创建Hello world工程"></a>创建Hello world工程</h2><p>拷贝ESP-IDF自带的hello world example工程到~/esp目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/esp</div><div class="line">cp -r $IDF_PATH/examples/get-started/hello_world</div></pre></td></tr></table></figure>
+<p> 使用USB线连接正恳ESP开发板，此时PC下就会识别到一个CP2102的USB转串口设备。Ubuntu下到通过ls /dev/ttyUSB*查看。<br> 然后Terminal下继续进行工程的配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd ~/esp/hello_world</div><div class="line">make menuconfig</div></pre></td></tr></table></figure>
+<p><img src="/2017/06/09/ESP32development/project-configuration.png" alt="logo"></p>
+<p>选择Serial flasher config -&gt;Default serial port去配置程序下载使用的串口，查看LOG和下载程序都是使用的同一个串口，就是上面PC识别到的CP2102串口设备/dev/ttyUSB<em>（具体</em>是0还是1根据实际情况来定），然后选择save保存当前的配置，并通过exit退出配置界面。</p>
+<h2 id="编译和烧写程序"><a href="#编译和烧写程序" class="headerlink" title="编译和烧写程序"></a>编译和烧写程序</h2><p>回到~/esp/hello_world工程目录，执行下面的命令来自动编译和下载程序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make flash</div></pre></td></tr></table></figure>
+<p>这一步会编译hello world应用程序以及所依赖的所有ESP-IDF组件，然后自动生成bootloader，分区表，和应用的二进制文件，最后会通过串口自动烧写所有的二进制文件到你的ESP32板子里。<br>之后，通过Minicom打开/dev/ttyUSB*(115200,8N1,None)，会看到系统的启动log如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">Hello world!</div><div class="line">Restarting in 10 seconds...</div><div class="line">I (211) cpu_start: Starting scheduler on APP CPU.</div><div class="line">Restarting in 9 seconds...</div><div class="line">Restarting in 8 seconds...</div><div class="line">Restarting in 7 seconds...</div></pre></td></tr></table></figure>
+<p>你也可以通过make monitor命令来查看log信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ make monitor</div><div class="line">MONITOR</div><div class="line">--- idf_monitor on /dev/ttyUSB0 115200 ---</div><div class="line">--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---</div><div class="line">ets Jun  8 2016 00:22:57</div><div class="line"></div><div class="line">rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)</div><div class="line">ets Jun  8 2016 00:22:57</div><div class="line">...</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -193,19 +238,79 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://waterzhou.github.io/2017/06/09/ESP32development/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+
+
+
+  
+  
+  
+
+  
+
+  
 
 
           </div>
@@ -228,8 +333,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
